@@ -4,9 +4,9 @@ using System.Security.Claims;
 
 namespace Integratte.Util.Jwt.Models
 {
-    public class JwtResponseModel
+    public class JwtReturnModel
     {
-        public JwtResponseModel()
+        public JwtReturnModel()
         {
             Claims = new List<Claim>();
 

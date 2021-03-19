@@ -9,7 +9,7 @@ namespace Integratte.Util.Jwt
 {
     public class JwtGenerator
     {
-        public static JwtResponseModel RetornoJwt(JwtEntryModel jwtEntryModel)
+        public static JwtReturnModel RetornoJwt(JwtEntryModel jwtEntryModel)
         {
             DateTime expiracao = DateTime.UtcNow.AddMinutes(jwtEntryModel.MinutesToExpiration);
 
@@ -27,7 +27,7 @@ namespace Integratte.Util.Jwt
             
             string token = tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
 
-            return new JwtResponseModel()
+            return new JwtReturnModel()
             {
                 Claims = jwtEntryModel.Claims,
                 Expiration = expiracao.ToUniversalTime(),
